@@ -22,6 +22,18 @@ spring:
       - classpath:/db/migration
     baseline-version: 1
 
+  graphql:
+    graphiql:
+      enabled: true
+    schema:
+      printer:
+        enabled: true
+
+graphql:
+  spqr:
+    gui:
+      enabled: true
+
 error:
   log:
     config:
