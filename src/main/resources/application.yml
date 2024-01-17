@@ -1,7 +1,5 @@
 server:
   port: ${port:8080}
-  servlet:
-    context-path: /api/v1
   max-http-header-size: 40MB
 
 
@@ -22,12 +20,10 @@ spring:
       - classpath:/db/migration
     baseline-version: 1
 
+dgs:
   graphql:
-    graphiql:
-      enabled: true
-    schema:
-      printer:
-        enabled: true
+    schema-locations:
+      - classpath*:schema/*.graphql*
 
 error:
   log:
@@ -45,3 +41,7 @@ management:
   endpoint:
     shutdown:
       enabled: true
+
+logging:
+  level:
+    io.micrometer.core.instrument.logging.*: INFO
